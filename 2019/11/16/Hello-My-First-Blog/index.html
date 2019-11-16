@@ -387,19 +387,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
 <div class="pattern-center-blank"></div>
 
+  <div class="pattern-center single-center">
+    <!-- 有配图默认渲染第一张 -->
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/434322.jpg);" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/434322.jpg">
+    </div>
+    <header class="pattern-header single-header">
+      <h1 class="entry-title">
+      Hello My First Blog</h1>
+      <p class="entry-census">
+        <span>
+          <a href="yanghainan.org">
+            <img src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/timg.jpg">
+          </a>
+        </span>
+        <span>
+          <a href="yanghainan.org">hainan</a>
+        </span>
+        <span class="bull">
+        ·</span>
+        2019-11-16<span class="bull">
+        ·</span>
+      <span id="busuanzi_value_page_pv"></span>次阅读</p>
+    </header>
+  </div>
+
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
       <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
         <div class="toc"></div>
         <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-          <header class="entry-header">
-            <h1 class="entry-title">Hello My First Blog</h1>
-            <p class="entry-census">hainan&nbsp;·&nbsp;2019-11-16&nbsp;·&nbsp;<span id="busuanzi_value_page_pv"></span>次阅读</p></p>
-
-            <hr>
-          </header>
         
         <div class="entry-content">
           <p>  历经千辛万苦,总算完成博客的搭建了,谨以此做个纪念,整个博客基本都是照搬别人的,希望以后自己也能独立写出这样的网站,我真的是很喜欢这种技术的不断进步与网站开发搭建的这种过程啊!</p>
@@ -467,7 +484,7 @@
 
       <section class="author-profile">
         <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="yanghainan.org" class="profile gravatar"><img src="https://wx1.sinaimg.cn/large/006bYVyvgy1ftand2qurdj303c03cdfv.jpg" itemprop="image" alt="hainan" height="70" width="70"></a>
+          <a href="yanghainan.org" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/timg.jpg" itemprop="image" alt="hainan" height="70" width="70"></a>
           <div class="meta">
             <span class="title">Author</span>
             <h3 itemprop="name">
@@ -489,7 +506,7 @@
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -501,10 +518,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
