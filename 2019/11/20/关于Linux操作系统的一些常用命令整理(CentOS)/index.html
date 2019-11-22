@@ -389,7 +389,7 @@
 
   <div class="pattern-center single-center">
     <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/1049330.jpg);" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/1049330.jpg">
+    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/cover/1049330.jpg);" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/cover/1049330.jpg">
     </div>
     <header class="pattern-header single-header">
       <h1 class="entry-title">
@@ -436,8 +436,10 @@ localhost主机名
 </code></pre>
 <h3 id="二-查询目录的内容"><a href="#二-查询目录的内容" class="headerlink" title="二.查询目录的内容"></a>二.查询目录的内容</h3><h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><pre><code class="yml">ls [选项][文件或目录]
 </code></pre>
-<pre><code class="yml">选项：
-
+<ul>
+<li>选项：</li>
+</ul>
+<pre><code class="yml">
 -a 所有文件
 
 -l 查看详情
@@ -450,14 +452,18 @@ localhost主机名
 </code></pre>
 <pre><code class="yml">-p表述递归建文件夹
 </code></pre>
-<p>举例：</p>
+<ul>
+<li>举例：</li>
+</ul>
 <pre><code class="yml">mkdir japan
 
 mkdir -p japan/cangjk
 </code></pre>
 <h4 id="2-切换目录"><a href="#2-切换目录" class="headerlink" title="2.切换目录"></a>2.切换目录</h4><pre><code class="yml">cd [目录]
 </code></pre>
-<p>简化操作：</p>
+<ul>
+<li>简化操作：</li>
+</ul>
 <pre><code class="yml">cd~ 进入当前用户目录
 
 cd- 上次目录
@@ -472,9 +478,10 @@ rm -rf [目录] 删除目录所有文件
 </code></pre>
 <h4 id="4-复制目录"><a href="#4-复制目录" class="headerlink" title="4.复制目录"></a>4.复制目录</h4><pre><code class="yml">cp[选项][原文件目录][目标目录]
 </code></pre>
-<pre><code class="yml">选项：
-
--r复制目录
+<ul>
+<li>选项：</li>
+</ul>
+<pre><code class="yml">-r复制目录
 
 -p连文件属性一起复制
 
@@ -504,22 +511,23 @@ rm -rf [目录] 删除目录所有文件
 件，要执行updatedb操作之后才能搜到
 </code></pre>
 <h4 id="2-命令搜索"><a href="#2-命令搜索" class="headerlink" title="2.命令搜索"></a>2.命令搜索</h4><pre><code class="yml">whereis [选项] [命令名]
-
-或者
-
-which [选项][命令名]
-
 </code></pre>
-<pre><code class="yml">选项：
-
--b 只查找可执行文件
+<p>或者</p>
+<pre><code class="yml">which [选项][命令名]
+</code></pre>
+<ul>
+<li>选项：</li>
+</ul>
+<pre><code class="yml">-b 只查找可执行文件
 
 -m 只查找帮助文件
 
 </code></pre>
 <h4 id="3-文件搜索"><a href="#3-文件搜索" class="headerlink" title="3.文件搜索"></a>3.文件搜索</h4><pre><code class="yml">find [搜索范围][选项][条件]
 </code></pre>
-<p>直接举例子：</p>
+<ul>
+<li>直接举例子：</li>
+</ul>
 <pre><code class="yml">find  /  -name install.log  
 在根目录下查找名为install.log文件
 </code></pre>
@@ -537,25 +545,28 @@ find /var/log -mtime +10
 10  10天
 -10 10天内
 </code></pre>
-<pre><code class="yml">
-find /etc -size +20M
+<pre><code class="yml">find /etc -size +20M
 
 查找文件大于20M的文件
 </code></pre>
-<h3 id="五、压缩与解压缩命令"><a href="#五、压缩与解压缩命令" class="headerlink" title="五、压缩与解压缩命令"></a>五、压缩与解压缩命令</h3><p>常见压缩格式：.zip 、 .gz 、 .bz2、<br>.tar.gz 、 .tar.bz2</p>
+<h3 id="五、压缩与解压缩命令"><a href="#五、压缩与解压缩命令" class="headerlink" title="五、压缩与解压缩命令"></a>五、压缩与解压缩命令</h3><p>-常见压缩格式：.zip 、 .gz 、 .bz2、<br>.tar.gz 、 .tar.bz2</p>
 <h4 id="1-zip格式"><a href="#1-zip格式" class="headerlink" title="1.zip格式"></a>1.zip格式</h4><pre><code class="yml">//压缩文件
 zip [压缩文件名][原文件]
 //压缩目录
 zip -r  [压缩文件名][原文件]
 </code></pre>
-<p>举例子：</p>
+<ul>
+<li>举例子：</li>
+</ul>
 <pre><code class="yml">touch jp/cangls
 
 touch jp/longls
 
 zip -r jp.zip jp
 </code></pre>
-<p>解压：</p>
+<ul>
+<li>解压：</li>
+</ul>
 <pre><code class="yml">unzip [压缩文件名]
 </code></pre>
 <h4 id="2-gz格式"><a href="#2-gz格式" class="headerlink" title="2.gz格式"></a>2.gz格式</h4><pre><code class="yml"># 压缩为gz格式，原文件不保留
@@ -567,7 +578,9 @@ gzip -c 原文件 &gt; 压缩文件
 # 压缩目录：
 gzip -r  目录
 </code></pre>
-<p>解压：</p>
+<ul>
+<li>解压：</li>
+</ul>
 <pre><code class="yml">guzip [文件]
 
 guzip -r [目录]
@@ -586,15 +599,16 @@ tar -zcvf 压缩包名.tar.gz  原文件
 #解压
 tar -zxvf  压缩包名.tar.gz
 </code></pre>
-<h3 id="六、关机和重启"><a href="#六、关机和重启" class="headerlink" title="六、关机和重启"></a>六、关机和重启</h3><pre><code class="yml">
-##打包
-shutdown [选项][时间]
+<h3 id="六、关机和重启"><a href="#六、关机和重启" class="headerlink" title="六、关机和重启"></a>六、关机和重启</h3><pre><code class="yml">shutdown [选项][时间]
+</code></pre>
+<ul>
+<li>选项：</li>
+</ul>
+<pre><code class="yml">-c 取消前一个关机命令
 
-#选项：
--c 取消前一个关机命令
 -h 关机
--r 重启
 
+-r 重启
 
 init 6重启
 
@@ -602,48 +616,48 @@ init 0关机
 
 logout退出登陆
 </code></pre>
-<h3 id="七、查看用户信息"><a href="#七、查看用户信息" class="headerlink" title="七、查看用户信息"></a>七、查看用户信息</h3><pre><code class="yml">##打包
-shutdown [选项][时间]
-
-#选项：
--c 取消前一个关机命令
--h 关机
--r 重启
-
-
-init 6重启
-
-init 0关机
-
-logout退出登陆
+<h3 id="七、查看用户信息"><a href="#七、查看用户信息" class="headerlink" title="七、查看用户信息"></a>七、查看用户信息</h3><pre><code class="yml">w
+who
+last
+lastlog
 </code></pre>
 <h3 id="八、shell基础"><a href="#八、shell基础" class="headerlink" title="八、shell基础"></a>八、shell基础</h3><h4 id="1-什么是shell"><a href="#1-什么是shell" class="headerlink" title="1.什么是shell"></a>1.什么是shell</h4><p>shell是命令行解释器。</p>
 <h4 id="2-echo-输出命令"><a href="#2-echo-输出命令" class="headerlink" title="2.echo 输出命令"></a>2.echo 输出命令</h4><pre><code class="yml">echo[选项][输出内容]
 </code></pre>
-<p>选项：</p>
+<ul>
+<li>选项：</li>
+</ul>
 <pre><code class="yml">-e:支持转义
 </code></pre>
 <h4 id="３-创建一个脚本"><a href="#３-创建一个脚本" class="headerlink" title="３.创建一个脚本"></a>３.创建一个脚本</h4><p>创建hello.sh</p>
 <pre><code class="yml">vim hello.sh
 </code></pre>
-<p>进入编辑：</p>
+<ul>
+<li>进入编辑：</li>
+</ul>
 <pre><code class="yml"># !/bin/bash
 # the first program
 echo &quot;hello world!&quot;
 </code></pre>
-<p>执行：</p>
+<ul>
+<li>执行：</li>
+</ul>
 <pre><code class="yml">chmod 755 hello.sh
 
 ./hello.sh
 </code></pre>
-<p>或者：</p>
+<ul>
+<li>或者：</li>
+</ul>
 <pre><code class="yml">bash hello.sh
 </code></pre>
 <h3 id="九、历史命令"><a href="#九、历史命令" class="headerlink" title="九、历史命令"></a>九、历史命令</h3><pre><code class="yml">history 查看历史命令
 
 history [选项][历史保存文件]
 </code></pre>
-<p>选项：</p>
+<ul>
+<li>选项：</li>
+</ul>
 <pre><code class="yml">-c清空历史
 
 -w把缓存中的历史写入历史命令保存文件
@@ -660,7 +674,9 @@ history [选项][历史保存文件]
 
 命令&gt;&gt;文件1 2&gt;&gt;文件2   把正确的命令输出到文件1错误的文件2
 </code></pre>
-<p>举个例子:</p>
+<ul>
+<li>举个例子:</li>
+</ul>
 <pre><code class="yml">#/bin/bash
 while command
 do
@@ -671,13 +687,17 @@ echo &quot;$time $cat&quot; &gt;&gt;test.log
 sleep 15s
 done
 </code></pre>
-<h3 id="十一、网络相关"><a href="#十一、网络相关" class="headerlink" title="十一、网络相关"></a>十一、网络相关</h3><h4 id="1-ifconfig查看ip"><a href="#1-ifconfig查看ip" class="headerlink" title="1.ifconfig查看ip"></a>1.ifconfig查看ip</h4><p>举个例子：</p>
+<h3 id="十一、网络相关"><a href="#十一、网络相关" class="headerlink" title="十一、网络相关"></a>十一、网络相关</h3><h4 id="1-ifconfig查看ip"><a href="#1-ifconfig查看ip" class="headerlink" title="1.ifconfig查看ip"></a>1.ifconfig查看ip</h4><ul>
+<li>举个例子：</li>
+</ul>
 <pre><code class="yml">ifconfig&gt;&gt; ip.log
 cat ip.log
 </code></pre>
 <h4 id="2-查看网络状态"><a href="#2-查看网络状态" class="headerlink" title="2.查看网络状态"></a>2.查看网络状态</h4><pre><code class="yml">netstat [选项]
 </code></pre>
-<p>选项：</p>
+<ul>
+<li>选项：</li>
+</ul>
 <pre><code class="yml">-t: 列出tcp 协议端口
 -u: 列出upd协议端口
 -n ip地址个端口号
@@ -685,10 +705,11 @@ cat ip.log
 -a 所有
 </code></pre>
 <h4 id="3-查看路由列表"><a href="#3-查看路由列表" class="headerlink" title="3.查看路由列表"></a>3.查看路由列表</h4><pre><code class="yml">netstat -rn
-或者
-route -n
 </code></pre>
-<h4 id="4-查看某域名与自己的电脑的网络状态"><a href="#4-查看某域名与自己的电脑的网络状态" class="headerlink" title="4.查看某域名与自己的电脑的网络状态"></a>4.查看某域名与自己的电脑的网络状态</h4><pre><code class="yml">ping www.baodu.com
+<p>或者</p>
+<pre><code class="yml">route -n
+</code></pre>
+<h4 id="4-查看某域名与自己的电脑的网络状态"><a href="#4-查看某域名与自己的电脑的网络状态" class="headerlink" title="4.查看某域名与自己的电脑的网络状态"></a>4.查看某域名与自己的电脑的网络状态</h4><pre><code class="yml">ping www.baidu.com
 </code></pre>
 <h3 id="十二、vi编辑器"><a href="#十二、vi编辑器" class="headerlink" title="十二、vi编辑器"></a>十二、vi编辑器</h3><p>vi的升级版是vim,建议使用vim.</p>
 <h4 id="1-vim的操作模式"><a href="#1-vim的操作模式" class="headerlink" title="1.vim的操作模式"></a>1.vim的操作模式</h4><pre><code class="yml">commond mode  命令模式
@@ -755,9 +776,26 @@ winscp copy文件工具
       <div class="toc" style="background: none;"></div>
       <section class="post-squares nextprev">
         
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2019/11/22/在阿里云服务器上安装MySQL（CentOS7）/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/banner/939928.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/banner/939928.jpg">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                在阿里云服务器上安装MySQL（CentOS）</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
         
           
-            <div class="post-nepre full next">
+            <div class="post-nepre half next">
           
             <a href="/2019/11/16/Hello-My-First-Blog/" rel="next">
               <div class="background">
