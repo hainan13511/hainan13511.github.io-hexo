@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yanghainan.org/"/>
-  <updated>2019-11-22T08:21:39.534Z</updated>
+  <updated>2019-11-26T10:20:23.771Z</updated>
   <id>http://yanghainan.org/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>在阿里云服务器上安装MySQL（CentOS）</title>
+    <title>在阿里云服务器上安装MySQL（CentOS7）</title>
     <link href="http://yanghainan.org/2019/11/22/%E5%9C%A8%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%AE%89%E8%A3%85MySQL%EF%BC%88CentOS7%EF%BC%89/"/>
     <id>http://yanghainan.org/2019/11/22/在阿里云服务器上安装MySQL（CentOS7）/</id>
     <published>2019-11-22T04:02:26.000Z</published>
-    <updated>2019-11-22T08:21:39.534Z</updated>
+    <updated>2019-11-26T10:20:23.771Z</updated>
     
     <summary type="html">
     
@@ -94,9 +94,9 @@
       <category term="技术" scheme="http://yanghainan.org/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="web" scheme="http://yanghainan.org/tags/web/"/>
-    
       <category term="悦读" scheme="http://yanghainan.org/tags/%E6%82%A6%E8%AF%BB/"/>
+    
+      <category term="web" scheme="http://yanghainan.org/tags/web/"/>
     
   </entry>
   
