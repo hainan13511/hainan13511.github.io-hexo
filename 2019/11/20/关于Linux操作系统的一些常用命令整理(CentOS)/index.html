@@ -436,7 +436,8 @@ localhost主机名
 
 &#39;$&#39; 普通用户
 </code></pre>
-<h3 id="二-查询目录的内容"><a href="#二-查询目录的内容" class="headerlink" title="二.查询目录的内容"></a>二.查询目录的内容</h3><h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><pre><code class="yml">ls [选项][文件或目录]
+<h3 id="二-查询目录的内容"><a href="#二-查询目录的内容" class="headerlink" title="二.查询目录的内容"></a>二.查询目录的内容</h3><h4 id="1-查看目录"><a href="#1-查看目录" class="headerlink" title="1.查看目录"></a>1.查看目录</h4><pre><code class="yml">pwd 显示路径
+ls [选项][文件或目录]
 </code></pre>
 <ul>
 <li>选项：</li>
@@ -445,10 +446,66 @@ localhost主机名
 -a 所有文件
 
 -l 查看详情
+#可以简写ll,一般都习惯用这个
 
 -d查看目录属性
 
 -h显示文件大小
+</code></pre>
+<h4 id="2-查看文件内容"><a href="#2-查看文件内容" class="headerlink" title="2.查看文件内容"></a>2.查看文件内容</h4><ul>
+<li>cat|head|tail命令</li>
+</ul>
+<pre><code class="yml">
+cat abc.txt #查看abc的内容
+
+head -5 abc.txt #查看abc前5行内容。默认是10行
+
+tail [选项] 文件名
+
+各选项的含义如下：
++num：从第num行以后开始显示
+-num：从距文件尾num行处开始显示。如果省略num参数，系统默认值为10.
+-f: 循环读取,例如查看服务器日志时，可以实时观察
+#filename 文件里的最尾部的内容显示在屏幕上，并且不断刷新。
+tail -f filename
+#查看最后20行
+tail -f filename
+</code></pre>
+<ul>
+<li>more命令</li>
+</ul>
+<pre><code class="yml">
+more命令一次显示一屏信息，若信息未显示完屏幕底部将出现“-More-（xx%）”。
+
+此时按Space键，可显示下一屏内容；
+
+按“回车”键，显示下一行内容；
+
+按B键，显示上一屏；
+
+按Q键，可退出more命令。
+</code></pre>
+<ul>
+<li>less命令：和more命令类似，但是比more命令更强大。在很多时候，必须使用less,比如管道。例如</li>
+</ul>
+<pre><code class="yml">
+ll /etc | less
+#可以按Q返回
+</code></pre>
+<ul>
+<li>stat 命令：<br>查看文件的详细信息，比如创建修改时间，大小等</li>
+</ul>
+<pre><code class="yml">
+[root@localhost zx]# stat index.html 
+  文件：&quot;index.html&quot;
+  大小：29006         块：64         IO 块：4096   普通文件
+设备：fd00h/64768d    Inode：17589607    硬链接：1
+权限：(0644/-rw-r--r--)  Uid：(    0/    root)   Gid：(    0/    root)
+环境：unconfined_u:object_r:home_root_t:s0
+最近访问：2019-09-02 21:47:41.824053666 +0800
+最近更改：2019-09-02 21:44:33.588587500 +0800
+最近改动：2019-09-02 21:44:33.588587500 +0800
+创建时间：-
 </code></pre>
 <h3 id="三、文件处理命令"><a href="#三、文件处理命令" class="headerlink" title="三、文件处理命令"></a>三、文件处理命令</h3><h4 id="1、建立目录"><a href="#1、建立目录" class="headerlink" title="1、建立目录"></a>1、建立目录</h4><pre><code class="yml">mkdir -p [目录名]
 </code></pre>
@@ -458,8 +515,11 @@ localhost主机名
 <li>举例：</li>
 </ul>
 <pre><code class="yml">mkdir japan
-
+#新建一个目录japan
 mkdir -p japan/cangjk
+#在japan目录（如果没有就创建）下新建一个目录cangjk
+touch abc.sh
+#新建一个文件
 </code></pre>
 <h4 id="2-切换目录"><a href="#2-切换目录" class="headerlink" title="2.切换目录"></a>2.切换目录</h4><pre><code class="yml">cd [目录]
 </code></pre>
@@ -483,15 +543,123 @@ rm -rf [目录] 删除目录所有文件
 <ul>
 <li>选项：</li>
 </ul>
-<pre><code class="yml">-r复制目录
-
--p连文件属性一起复制
-
--a 相当于-pdr
+<pre><code class="yml">-a：此选项通常在复制目录时使用，它保留链接、文件属性，并复制目录下的所有内容。其作用等于dpR参数组合。
+-d：复制时保留链接。这里所说的链接相当于Windows系统中的快捷方式。
+-f：覆盖已经存在的目标文件而不给出提示。
+-i：与-f选项相反，在覆盖目标文件之前给出提示，要求用户确认是否覆盖，回答&quot;y&quot;时目标文件将被覆盖。
+-p：除复制文件的内容外，还把修改时间和访问权限也复制到新文件中。
+-r：若给出的源文件是一个目录文件，此时将复制该目录下所有的子目录和文件。
+-l：不复制文件，只是生成链接文件。
 </code></pre>
-<h4 id="5-剪切、改名"><a href="#5-剪切、改名" class="headerlink" title="5.剪切、改名"></a>5.剪切、改名</h4><pre><code class="yml">mv[原文件目录][目标文件目录]
+<ul>
+<li>举例</li>
+</ul>
+<pre><code class="yml">#将../html/index.html 复制到当前目录
+cp ../html/index.html .
+
+#将../html/ 目录下的文件及子目录复制到当前的tt目录下，如果tt不存在，会自动创建
+cp -r ../html/  tt/
+
+#将文件file复制到目录/usr/men/tmp下，并改名为file1
+cp file /usr/men/tmp/file1  
+
+#如果dir2目录已存在，则需要使用
+cp -r dir1/. dir2
+
+#如果这时使用cp -r dir1 dir2,则也会将dir1目录复制到dir2中，明显不符合要求。
+ps:dir1、dir2改成对应的目录路径即可。
 </code></pre>
-<h4 id="6-常见目录作用"><a href="#6-常见目录作用" class="headerlink" title="6.常见目录作用"></a>6.常见目录作用</h4><pre><code class="yml">/ 根目录
+<ul>
+<li>远程复制</li>
+</ul>
+<pre><code class="yml">#将当前目录下的test.txt复制到远程111.12机器的/zx目录下
+scp test.txt root@192.168.111.12:/zx
+
+#将test.txt复制到远程用户的根目录，并命名为textA.txt
+scp test.txt root@192.168.111.12:testA.txt
+
+#也可以不指定用户，在后续提示中再输入，如下：
+scp test.txt 192.168.111.12:/zx
+
+#从远程复制到本地： -r用于递归整个目录
+scp -r remote_user@remote_ip:remote_folder local_path
+</code></pre>
+<h4 id="5-剪切、改名"><a href="#5-剪切、改名" class="headerlink" title="5.剪切、改名"></a>5.剪切、改名</h4><ul>
+<li>剪切</li>
+</ul>
+<pre><code class="yml">mv[原文件目录][目标文件目录]
+
+#复制/zx/soft目录中的所有文件到当前目录
+mv /zx/soft/* .
+
+#复制当前目录a.txt到当前的test目录下。
+mv a.txt ./test/a.txt
+
+#复制文件夹到/tmp/下，必须保证tmp是存在的文件夹
+mv /zx/soft/  /tmp/soft
+</code></pre>
+<ul>
+<li>改名</li>
+</ul>
+<pre><code class="yml">#将目录(文件)A重命名为B
+mv A B
+#将/a目录(文件)移动到/b下，并重命名为c。要保证b目录存在。
+mv /a /b/c
+#将当前test1目录移动到当前的test目录并命名为b
+mv ./test1 ./test/b 
+</code></pre>
+<h4 id="6-ln、file和touch命令"><a href="#6-ln、file和touch命令" class="headerlink" title="6.ln、file和touch命令"></a>6.ln、file和touch命令</h4><ul>
+<li>ln命令</li>
+</ul>
+<p>用于创建链接文件，包括硬链接（Hard Link）和符号链接（Symbolic Link） 。我们常用的是符号链接，也称软连接。软连接就类似windows里的快捷方式。</p>
+<p>示例：</p>
+<pre><code class="yml">#在当前目录创建一个软连接，指向/etc/fastab，名称也是fastab
+ln -s /etc/fastab
+
+#在当前目录创建一个指向/boot/grub的软连接，命名为gb
+ln -s /boot/grub gb
+</code></pre>
+<p>注意：删除软连接 正确方式是：</p>
+<pre><code class="yml">rm -rf ./gb
+</code></pre>
+<p>错误方式:</p>
+<pre><code class="yml">rm -rf ./gb/
+</code></pre>
+<p>这样会删除了原有grub下的内容。特别是针对系统文件的软连接，删除一定要慎重。</p>
+<ul>
+<li>file命令</li>
+</ul>
+<p>用于识别文件的类型，Linux中文件后缀只是方便使用者识别，没有实质的约束作用。file命令可以查看文件的实质类型：</p>
+<pre><code class="yml">file [-bcLz] 文件|目录
+#选项
+文件|目录：需要识别的文件或目录
+-b: 显示识别结果时，不显示文件名
+-c: 显示执行过程
+-L: 直接显示符号链接文件指向的文件类型
+-z: 尝试去解读压缩文件的内容
+</code></pre>
+<p>示例：可以看出，index.mp4本质是一个HTML而非一个mp4文件</p>
+<pre><code class="yml">[root@VM_0_13_centos soft]# file index.mp4 
+index.mp4: HTML document, UTF-8 Unicode text, with very long lines
+</code></pre>
+<ul>
+<li>touch命令</li>
+</ul>
+<p>用于改变文件或目录的访问时间和修改时间。</p>
+<pre><code class="yml">touch [-am] [-t&lt;日期时间&gt;] [目录|文件]
+</code></pre>
+<p>如果指定目录文件不存在，则会直接创建一个空文件，所以touch也常用来创建一个空白文件</p>
+<pre><code class="yml">#创建一个新文件aa.txt
+touch aa.txt
+#选项说明：
+-a: 只修改访问时间
+-m : 只修改 修改时间
+-t : 使用指定日期时间，而非系统时间 。例如要修改为2019年10月20日16：38分13秒。参数就是：‘20191020163813’
+</code></pre>
+<p>开始修改：将index.html文件的访问和修改时间修改成当前系统的时间。</p>
+<pre><code class="yml">touch index.html
+</code></pre>
+<h4 id="7-常见目录作用"><a href="#7-常见目录作用" class="headerlink" title="7.常见目录作用"></a>7.常见目录作用</h4><pre><code class="yml">/ 根目录
 
 /bin 命令保存目录
 
@@ -507,15 +675,17 @@ rm -rf [目录] 删除目录所有文件
 
 /mnt 系统挂载目录
 </code></pre>
-<h3 id="四、文件搜索命令"><a href="#四、文件搜索命令" class="headerlink" title="四、文件搜索命令"></a>四、文件搜索命令</h3><h4 id="1-locate"><a href="#1-locate" class="headerlink" title="1.locate"></a>1.locate</h4><pre><code class="yml">locate [文件名]
+<h3 id="四、文件搜索命令"><a href="#四、文件搜索命令" class="headerlink" title="四、文件搜索命令"></a>四、文件搜索命令</h3><h4 id="1-locate"><a href="#1-locate" class="headerlink" title="1.locate"></a>1.locate</h4><p>locate的查找速度非常快，因为该命令查找的是数据库，所以有些刚修改的文件和目录，可能无法找到。可以采用：updatedb 命令更新数据库。</p>
+<pre><code class="yml">locate [文件名]
 
-在系统数据库中查找文件的新建的文
-件，要执行updatedb操作之后才能搜到
+//在系统数据库中查找文件的新建的文件，要执行updatedb操作之后才能搜到
 </code></pre>
 <h4 id="2-命令搜索"><a href="#2-命令搜索" class="headerlink" title="2.命令搜索"></a>2.命令搜索</h4><pre><code class="yml">whereis [选项] [命令名]
+#默认只会在指定目录查找（/bin ,/etc ,/usr)  
 </code></pre>
 <p>或者</p>
 <pre><code class="yml">which [选项][命令名]
+#which命令只会在PATH环境变量定义的路径及命令别名中查找，所以范围有限。
 </code></pre>
 <ul>
 <li>选项：</li>
@@ -524,11 +694,37 @@ rm -rf [目录] 删除目录所有文件
 
 -m 只查找帮助文件
 
+-u: 查找不包含指定类型的文件
+
+-B&lt;目录&gt;： 只在指定目录下查找二进制文件
+
+-M&lt;目录&gt;：只在指定目录查找帮助文件
+
+-S&lt;目录&gt;：只在指定目录查找源码目录
 </code></pre>
 <h4 id="3-文件搜索"><a href="#3-文件搜索" class="headerlink" title="3.文件搜索"></a>3.文件搜索</h4><pre><code class="yml">find [搜索范围][选项][条件]
 </code></pre>
 <ul>
-<li>直接举例子：</li>
+<li>几个常用选项：</li>
+</ul>
+<pre><code class="yml">-size &lt;文件大小&gt;：查找符合指定大小的文件。文件大小单位可以是“c”表示Byte；“k”表示KB。如配置为“100k”，find命令会查找文件大小正好100KB的文件；配置为“+100k”，find命令会查找文件大小大于100KB的文件；配置为“-100k”，find命令会查找文件大小小于100KB的文件。
+
+-user&lt;用户名称&gt;：查找所有者是指定用户的文件或目录，也能以用户编号指定
+
+-name &lt;查找内容&gt;：查找指定的内容，在查找内容中使用“*” 表示任意个字符；使用“?”表示任何一个字符
+
+-mtime &lt;24小时数&gt;：查找在指定时间曾更改过内容的文件或目录，单位以24小时计算。如配置为2，find命令会查找刚好在48小时之前更改过内容的文件；配置为+2，find命令会查找超过在48小时之前更改过内容的文件；配置为-2，find命令会查找在48小时之内更改过内容的文件。
+
+-mmin &lt;分钟&gt;：查找在指定时间曾被更改过内容的文件或目录，单位以分钟计算。
+
+-cmin &lt;分钟&gt;：查找在指定时间曾被更改过权限属性的文件或目录，单位以分钟计算。-ctime对应小时。
+
+-amin &lt;分钟&gt;：查找的是指定时间访问过的文件或目录。-atim对应小时。
+
+-perm &lt;权限数值&gt;：查找符合指定权限数值（有关权限数值见第6章）的文件或目录。如配置为“0700”，find命令会查找权限数值正好是“0700”的文件或目录；配置为“+0700”，find命令会查找权限数值大于 “0700”的文件或目录；配置为“-0700”，find
+</code></pre>
+<ul>
+<li>举例子：</li>
 </ul>
 <pre><code class="yml">find  /  -name install.log  
 在根目录下查找名为install.log文件
@@ -551,55 +747,86 @@ find /var/log -mtime +10
 
 查找文件大于20M的文件
 </code></pre>
-<h3 id="五、压缩与解压缩命令"><a href="#五、压缩与解压缩命令" class="headerlink" title="五、压缩与解压缩命令"></a>五、压缩与解压缩命令</h3><p>-常见压缩格式：.zip 、 .gz 、 .bz2、<br>.tar.gz 、 .tar.bz2</p>
-<h4 id="1-zip格式"><a href="#1-zip格式" class="headerlink" title="1.zip格式"></a>1.zip格式</h4><pre><code class="yml">//压缩文件
-zip [压缩文件名][原文件]
-//压缩目录
-zip -r  [压缩文件名][原文件]
+<h3 id="五、压缩与解压缩命令"><a href="#五、压缩与解压缩命令" class="headerlink" title="五、压缩与解压缩命令"></a>五、压缩与解压缩命令</h3><ul>
+<li>常见压缩格式：.zip 、.gz 、 .bz2、.tar.gz 、.tar.bz2</li>
+</ul>
+<pre><code class="yml">#压缩文件
+tar [压缩文件名][原文件]
+#压缩目录
+tar -r  [压缩文件名][原文件]
+</code></pre>
+<ul>
+<li>选项</li>
+</ul>
+<pre><code class="yml">-c: 建立压缩档案
+-x：解压
+-t：查看内容
+-r：向压缩归档文件末尾追加文件
+-u：更新原压缩包中的文件
+这五个是独立的命令，压缩解压都要用到其中一个，可以和别的命令连用但只能用其中一个。下面的参数是根据需要在压缩或解压档案时可选的。
+
+-z：有gzip属性的
+-j：有bz2属性的
+-Z：有compress属性的
+-v：显示所有过程
+-O：将文件解开到标准输出
+
+下面的参数-f是必须的
+-f: 使用档案名字，切记，这个参数是最后一个参数，后面只能接档案名。
 </code></pre>
 <ul>
 <li>举例子：</li>
 </ul>
-<pre><code class="yml">touch jp/cangls
-
-touch jp/longls
-
-zip -r jp.zip jp
+<pre><code class="yml">#将所有.jpg的文件打成一个名为all.tar的包。-c是表示产生新的包，-f指定包的文件名。
+tar -cf all.tar *.jpg
+#列出all.tar包中所有文件，-t是列出文件的意思
+tar -tf all.tar
+#解出all.tar包中所有文件，-x是解开的意思
+tar -xf all.tar
+#将目录里所有jpg文件打包成jpg.tar
+tar –cvf jpg.tar *.jpg
+#解压到当前目录
+tar -xzf nginx-1.14.0.tar.gz
+#解压到对应目录
+tar -zxf nginx-1.14.0.tar.gz -C /usr/local/nginx
+#解压并显示过程
+tar -zxvf nginx...tar.gz
+#注意：有些压缩程序提示命令找不到，需要进行安装，例如：
+yum install unzip
+或在ubuntu上：
+apt-get install unzip
 </code></pre>
 <ul>
 <li>解压：</li>
 </ul>
-<pre><code class="yml">unzip [压缩文件名]
-</code></pre>
-<h4 id="2-gz格式"><a href="#2-gz格式" class="headerlink" title="2.gz格式"></a>2.gz格式</h4><pre><code class="yml"># 压缩为gz格式，原文件不保留
-gzip [原文件]
+<pre><code class="yml">1、*.tar 用 tar –xvf 解压
+2、*.gz 用 gzip -d或者gunzip 解压
+3、*.tar.gz和*.tgz 用 tar –xzf 解压
+4、*.bz2 用 bzip2 -d或者用bunzip2 解压
+5、*.tar.bz2用tar –xjf 解压
+6、*.Z 用 uncompress 解压
+7、*.tar.Z 用tar –xZf 解压
+8、*.rar 用 unrar e解压
+9、*.zip 用 unzip 解压  
 
-#压缩.gz格式，原文件保留
+#解压的时候，有时候不想覆盖已经存在的文件，那么可以加上-n参数
+unzip -n test.zip
+unzip -n -d /temp test.zip
+#只看一下zip压缩包中包含哪些文件，不进行解压缩
+unzip -l test.zip
+#查看显示的文件列表还包含压缩比率
+unzip -v test.zip
+#检查zip文件是否损坏
+unzip -t test.zip
+#如果已有相同的文件存在，要求unzip命令覆盖原先的文件
+unzip -o test.zip -d /tmp/
+示例：
+unzip mydata.zip -d mydatabak #解压到mydatabak目录
 
-gzip -c 原文件 &gt; 压缩文件
-# 压缩目录：
-gzip -r  目录
-</code></pre>
-<ul>
-<li>解压：</li>
-</ul>
-<pre><code class="yml">guzip [文件]
-
-guzip -r [目录]
-</code></pre>
-<h4 id="3-tar"><a href="#3-tar" class="headerlink" title="3.tar"></a>3.tar</h4><pre><code class="yml"># 打包
-tar -cvf  打包文件名 原文件
-
-# 解压
-
-tar -xvf jp.tar
-</code></pre>
-<h4 id="4-tar-gz"><a href="#4-tar-gz" class="headerlink" title="4.tar.gz"></a>4.tar.gz</h4><pre><code class="yml">
-##打包
-tar -zcvf 压缩包名.tar.gz  原文件
-
-#解压
-tar -zxvf  压缩包名.tar.gz
+10. xz
+这是两层压缩，外面是xz压缩方式，里层是tar压缩,所以可以分两步实现解压
+$xz -d node-v6.10.1-linux-x64.tar.xz
+$tar -xvf node-v6.10.1-linux-x64.tar
 </code></pre>
 <h3 id="六、关机和重启"><a href="#六、关机和重启" class="headerlink" title="六、关机和重启"></a>六、关机和重启</h3><pre><code class="yml">shutdown [选项][时间]
 </code></pre>
@@ -748,7 +975,64 @@ ctr+r  在历史命令中搜索
 centos.iso   centos系统镜像 ,绝大多数服务器是这个系统
 SecureCRT  远程登陆工具
 Xshell 远程登陆工具
+Xftp copy文件工具
 winscp copy文件工具
+</code></pre>
+<h3 id="十五、du命令"><a href="#十五、du命令" class="headerlink" title="十五、du命令"></a>十五、du命令</h3><p>du命令是检查硬盘使用情况，统计文件或目录及子目录使用硬盘的空间大小。参数的不同组合，可以更快的提高工作效率，以下仅列出了经常使用到的参数，如需更详细的信息，请用man du命令来获得。<br>1．命令格式<br>du [选项][文件]</p>
+<p>2．命令功能<br>显示每个文件和目录的磁盘使用空间。</p>
+<p>3．命令参数<br>|  参数   | 说明  |<br>|  —-  | —-  |<br>| -a  | 显示所有目录或文件的大小 |<br>| -b  | 以byte为单位，显示目录或文件的大小 |<br>| -c | 显示目录或文件的总和 |<br>| -k  | 以KB为单位输出 |<br>| -m  | 以MB为单位输出 |<br>| -s  | 仅显示目录或文件的总计数值 |<br>| -h  | 以K,M,G为单位，提高信息可读性 |<br>| -x  | 跳过不同的文件系统目录 |<br>| -S  | 显示目录的大小，但不含子目录大小 |<br>| -D  | 显示指定符号链接的源文件大小 |</p>
+<p>实例1：显示目录或者文件所占空间</p>
+<pre><code class="yml">[root@tonyx home]# du
+4       ./tonyxu/.mozilla/plugins
+4       ./tonyxu/.mozilla/extensions
+12      ./tonyxu/.mozilla
+4       ./tonyxu/.gnome2
+40      ./tonyxu
+44      .
+说明：
+只显示当前home目录及子目录的大小，最下面的44为当前目录总计数
+</code></pre>
+<p>实例2：显示指定文件所占空间</p>
+<pre><code class="yml">[root@tonyx etc]# du inittab
+4       inittab
+</code></pre>
+<p>实例3：查看指定目录所占空间</p>
+<pre><code class="yml">[root@tonyx home]# du tonyxu
+4       tonyxu/.mozilla/plugins
+4       tonyxu/.mozilla/extensions
+12      tonyxu/.mozilla
+4       tonyxu/.gnome2
+40      tonyxu
+</code></pre>
+<p>实例5：显示两个目录所占磁盘空间大小</p>
+<pre><code class="yml">[root@tonyx tmp]# du yum yum.bake
+4       yum
+8       yum.bake
+</code></pre>
+<p>实例6：var目录中的某个文件太大，就可以使用如下命令查看</p>
+<pre><code class="yml">[root@tonyx tonyxu]# du -s /var/*|sort -nr
+468216  /var/cache
+61260   /var/lib
+1852    /var/log
+1172    /var/www
+160     /var/spool
+148     /var/run
+16      /var/tmp
+16      /var/lock
+8       /var/empty
+8       /var/db
+4       /var/yp
+4       /var/preserve
+4       /var/opt
+4       /var/nis
+4       /var/local
+4       /var/gdm
+4       /var/games
+4       /var/crash
+4       /var/account
+0       /var/mail
+说明：
+Sort -nr 从大到小排列倒叙排列，将占用磁盘空间最大的文件最先显示出来，即可及时处理。运维当中，非常重要的命令，需牢记
 </code></pre>
 
         </div>
@@ -853,7 +1137,7 @@ winscp copy文件工具
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..."/>
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..."/>
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -865,10 +1149,10 @@ winscp copy文件工具
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            // PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
