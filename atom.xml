@@ -61,7 +61,7 @@
     <link href="http://yanghainan.org/2019/11/16/Hello-My-First-Blog/"/>
     <id>http://yanghainan.org/2019/11/16/Hello-My-First-Blog/</id>
     <published>2019-11-16T11:43:13.000Z</published>
-    <updated>2019-11-25T14:13:33.435Z</updated>
+    <updated>2019-11-29T06:26:06.404Z</updated>
     
     <summary type="html">
     
@@ -69,7 +69,7 @@
       
         
         
-          &lt;p&gt; 
+          &lt;h4 id=&quot;历经千辛万苦-总算完成博客的搭建了-谨以此做个纪念-整个博客基本都是照搬别人的-希望以后自己也能独立写出这样的网站-我真的是很喜欢这种技术的不断进步与网站开发搭建的这种过程啊&quot;&gt;&lt;a
         
       
     
@@ -77,28 +77,6 @@
     
       <category term="生活" scheme="http://yanghainan.org/categories/%E7%94%9F%E6%B4%BB/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo-Theme-Sakura</title>
-    <link href="http://yanghainan.org/2018/12/12/Hexo-Theme-Sakura/"/>
-    <id>http://yanghainan.org/2018/12/12/Hexo-Theme-Sakura/</id>
-    <published>2018-12-12T14:16:01.000Z</published>
-    <updated>2019-11-16T15:08:04.810Z</updated>
-    
-    <summary type="html">
-    
-      hexo-sakura主题使用教程
-    
-    </summary>
-    
-      <category term="技术" scheme="http://yanghainan.org/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-      <category term="web" scheme="http://yanghainan.org/tags/web/"/>
-    
-      <category term="悦读" scheme="http://yanghainan.org/tags/%E6%82%A6%E8%AF%BB/"/>
     
   </entry>
   
