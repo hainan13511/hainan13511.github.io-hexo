@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   
-  <title itemprop="name">在阿里云服务器上安装MySQL（CentOS7） | 叶落薰风の理想乡</title>
+  <title itemprop="name">Tag: eclipse | 叶落薰风の理想乡</title>
   
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -389,196 +389,65 @@
   </div>
 </header>
 
-      <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+      
 <div class="pattern-center-blank"></div>
-
-  <div class="pattern-center single-center">
-    <!-- 有配图默认渲染第一张 -->
-    <div class="pattern-attachment-img lazyload" style="background-image: url(https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/banner/939928.jpg);" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/banner/939928.jpg">
-    </div>
-    <header class="pattern-header single-header">
-      <h1 class="entry-title">
-      在阿里云服务器上安装MySQL（CentOS7）</h1>
-      <p class="entry-census">
-        <span>
-          <a href="yanghainan.org">
-            <img src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/timg.jpg">
-          </a>
-        </span>
-        <span>
-          <a href="yanghainan.org">hainan</a>
-        </span>
-        <span class="bull">
-        ·</span>
-        2019-11-22<span class="bull">
-        ·</span>
-      <span id="busuanzi_value_page_pv"></span>次阅读</p>
-    </header>
+<div class="pattern-center ">
+  <div class="pattern-attachment-img">
+    <img src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="eclipse.img" class="lazyload" onerror="imgError(this,3)" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;">
   </div>
-
+  <header class="pattern-header ">
+    <h1 class="cat-title">eclipse</h1>
+  </header>
+</div>
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-        <div class="toc"></div>
-        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
-        
-        <div class="entry-content">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在window10上安装MySQL倒是很简单，下个安装包一路NEXT就行了，但是在服务器上安装时由于自己太过小白遇到了很多坑，现在记录下安装步骤，以后再次安装可以不必再踩坑了。</p>
-<h2 id="一、检查并且显示Apache相关安装包"><a href="#一、检查并且显示Apache相关安装包" class="headerlink" title="一、检查并且显示Apache相关安装包"></a>一、检查并且显示Apache相关安装包</h2><pre><code>[root@localhost ~]## rpm -qa | grep mysql
-</code></pre><h2 id="二、删除MySql"><a href="#二、删除MySql" class="headerlink" title="二、删除MySql"></a>二、删除MySql</h2><pre><code>[root@localhost ~]## yum remove -y mysql mysql mysql-server mysql-libs         compat-mysql51
-</code></pre><p>或<br>    [root@localhost ~]## rpm -e mysql-community-libs-5.7.20-1.el7.x86_64 –nodeps<br>或<br>    [root@localhost ~]## yum -y remove mysql-community-libs-5.7.20-1.el7.x86_64</p>
-<h2 id="三、查看MySql相关文件"><a href="#三、查看MySql相关文件" class="headerlink" title="三、查看MySql相关文件"></a>三、查看MySql相关文件</h2><pre><code>[root@localhost ~]## find / -name mysql
-</code></pre><h2 id="四、安装MySql服务"><a href="#四、安装MySql服务" class="headerlink" title="四、安装MySql服务"></a>四、安装MySql服务</h2><h3 id="1-确保服务器系统处于最新状态（可选）"><a href="#1-确保服务器系统处于最新状态（可选）" class="headerlink" title="1.确保服务器系统处于最新状态（可选）"></a>1.确保服务器系统处于最新状态（可选）</h3><p>[root@localhost ~]## yum -y update</p>
-<p>如果显示以下内容说明已经更新完成</p>
-<pre><code>Replaced:
-grub2.x86_64 1:2.02-0.64.el7.centos grub2-tools.x86_64 1:2.02-0.64.el7.centos
-Complete!
-</code></pre><h3 id="2-重启服务器（可选）"><a href="#2-重启服务器（可选）" class="headerlink" title="2.重启服务器（可选）"></a>2.重启服务器（可选）</h3><pre><code>[root@localhost ~]## reboot
-</code></pre><h3 id="3-首先检查是否已经安装，如果已经安装先删除以前版本，以免安装不成功"><a href="#3-首先检查是否已经安装，如果已经安装先删除以前版本，以免安装不成功" class="headerlink" title="3.首先检查是否已经安装，如果已经安装先删除以前版本，以免安装不成功"></a>3.首先检查是否已经安装，如果已经安装先删除以前版本，以免安装不成功</h3><pre><code>[root@localhost ~]## php -v
-</code></pre><p>或<br>    [root@localhost ~]## rpm -qa | grep mysql<br>或<br>    [root@localhost ~]## yum list installed | grep mysql</p>
-<p>如果显示以下内容说明没有安装服务</p>
-<pre><code>-bash: gerp: command not found
-</code></pre><h3 id="4-下载MySql安装包"><a href="#4-下载MySql安装包" class="headerlink" title="4.下载MySql安装包"></a>4.下载MySql安装包</h3><pre><code>[root@localhost ~]## rpm -ivh http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
-</code></pre><p>或<br>    [root@localhost ~]## rpm -ivh <a href="http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm" target="_blank" rel="noopener">http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</a></p>
-<h3 id="5-安装MySql"><a href="#5-安装MySql" class="headerlink" title="5.安装MySql"></a>5.安装MySql</h3><p>[root@localhost ~]## yum install -y mysql-server<br>或<br>[root@localhost ~]## yum install mysql-community-server</p>
-<p>如果显示以下内容说明安装成功</p>
-<pre><code>Complete!
-</code></pre><h3 id="6-设置开机启动Mysql"><a href="#6-设置开机启动Mysql" class="headerlink" title="6.设置开机启动Mysql"></a>6.设置开机启动Mysql</h3><pre><code>[root@localhost ~]## systemctl enable mysqld.service
-</code></pre><h3 id="7-检查是否已经安装了开机自动启动"><a href="#7-检查是否已经安装了开机自动启动" class="headerlink" title="7.检查是否已经安装了开机自动启动"></a>7.检查是否已经安装了开机自动启动</h3><pre><code>[root@localhost ~]## systemctl list-unit-files | grep mysqld
-</code></pre><p>如果显示以下内容说明已经完成自动启动安装</p>
-<pre><code>mysqld.service enabled
-</code></pre><h3 id="8-设置开启服务"><a href="#8-设置开启服务" class="headerlink" title="8.设置开启服务"></a>8.设置开启服务</h3><pre><code>[root@localhost ~]## systemctl start mysqld.service
-</code></pre><h3 id="9-查看MySql默认密码"><a href="#9-查看MySql默认密码" class="headerlink" title="9.查看MySql默认密码"></a>9.查看MySql默认密码</h3><pre><code>[root@localhost ~]## grep &#39;temporary password&#39; /var/log/mysqld.log
-</code></pre><h3 id="10-登陆MySql，输入用户名和密码"><a href="#10-登陆MySql，输入用户名和密码" class="headerlink" title="10.登陆MySql，输入用户名和密码"></a>10.登陆MySql，输入用户名和密码</h3><pre><code>[root@localhost ~]## mysql -uroot -p
-</code></pre><h3 id="11-修改当前用户密码"><a href="#11-修改当前用户密码" class="headerlink" title="11.修改当前用户密码"></a>11.修改当前用户密码</h3><pre><code>mysql&gt;SET PASSWORD = PASSWORD(&#39;Abc123!_&#39;);
-</code></pre><h3 id="12-开启远程登录，授权root远程登录"><a href="#12-开启远程登录，授权root远程登录" class="headerlink" title="12.开启远程登录，授权root远程登录"></a>12.开启远程登录，授权root远程登录</h3><pre><code>mysql&gt;GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;a123456!&#39; WITH GRANT OPTION;
-</code></pre><h3 id="13-命令立即执行生效"><a href="#13-命令立即执行生效" class="headerlink" title="13.命令立即执行生效"></a>13.命令立即执行生效</h3><pre><code>mysql&gt;flush privileges;
-</code></pre><hr>
-<h2 id="五、补充"><a href="#五、补充" class="headerlink" title="五、补充"></a>五、补充</h2><p> Mysql是为了安全考虑，初始的时候并没有开启Root用户的远程访问权限，Root只能本地localhost，127.0.0.1访问，但是我们操作起来实在是不方便，下面我们就使用Xshell连接Linux服务器操作Mysql给Root用户添加远程访问权限</p>
-<h3 id="1-我们先试用Xshell链接我们的远程Linux服务器"><a href="#1-我们先试用Xshell链接我们的远程Linux服务器" class="headerlink" title="1.我们先试用Xshell链接我们的远程Linux服务器"></a>1.我们先试用Xshell链接我们的远程Linux服务器</h3><h3 id="2、然后输入"><a href="#2、然后输入" class="headerlink" title="2、然后输入"></a>2、然后输入</h3><pre><code>-&gt; mysql -u root -p
-</code></pre><p>回车会出现 Enter password: 然后将我们的root用户密码输入进去再次回车;</p>
-<p>别忘了要切换到mysql数据库</p>
-<pre><code>-&gt; use mysql
-</code></pre><h3 id="3、接下来我们可以查看一下现有用户及连接权限-注意操作MySQL的语句需要加’-’"><a href="#3、接下来我们可以查看一下现有用户及连接权限-注意操作MySQL的语句需要加’-’" class="headerlink" title="3、接下来我们可以查看一下现有用户及连接权限(注意操作MySQL的语句需要加’;’)"></a>3、接下来我们可以查看一下现有用户及连接权限(注意操作MySQL的语句需要加’;’)</h3><pre><code>-&gt; select user, password, host from user;
-</code></pre><p>mysql是为了安全考虑所以初始的时候远程是不能访问的，只能本地localhost，127.0.0.1访问。</p>
-<h3 id="4、下面我们就再添加一个root用户，密码暂时为空，允许任意Ip访问’-’"><a href="#4、下面我们就再添加一个root用户，密码暂时为空，允许任意Ip访问’-’" class="headerlink" title="4、下面我们就再添加一个root用户，密码暂时为空，允许任意Ip访问’%’"></a>4、下面我们就再添加一个root用户，密码暂时为空，允许任意Ip访问’%’</h3><pre><code>-&gt; GRANT ALL PRIVILEGES ON *.* TO &#39;root&#39;@&#39;%&#39; IDENTIFIED BY &#39;你的密码不能太简单&#39; WITH GRANT OPTION;
-</code></pre><h3 id="5、接下来我们修改一下root用户的密码"><a href="#5、接下来我们修改一下root用户的密码" class="headerlink" title="5、接下来我们修改一下root用户的密码"></a>5、接下来我们修改一下root用户的密码</h3><pre><code>-&gt; update user set password=PASSWORD(&#39;123456&#39;) where user=&#39;root&#39;;
-</code></pre><h3 id="6、然后我们刷新一下mysql的权限"><a href="#6、然后我们刷新一下mysql的权限" class="headerlink" title="6、然后我们刷新一下mysql的权限"></a>6、然后我们刷新一下mysql的权限</h3><pre><code>-&gt; flush privileges;
-</code></pre><p>然后就大功告成了，远程任意ip都可以进行访问。</p>
-<hr>
-<h2 id="六、常用操作"><a href="#六、常用操作" class="headerlink" title="六、常用操作"></a>六、常用操作</h2><h3 id="重启MySql服务"><a href="#重启MySql服务" class="headerlink" title="重启MySql服务"></a>重启MySql服务</h3><pre><code>[root@localhost ~]## service mysqld restart
-</code></pre><h3 id="查看MySql版本"><a href="#查看MySql版本" class="headerlink" title="查看MySql版本"></a>查看MySql版本</h3><pre><code>[root@localhost ~]## yum repolist all | grep mysql
-</code></pre><h3 id="查看当前的启动的-MySQL-版本"><a href="#查看当前的启动的-MySQL-版本" class="headerlink" title="查看当前的启动的 MySQL 版本"></a>查看当前的启动的 MySQL 版本</h3><pre><code>[root@localhost ~]## yum repolist enabled | grep mysql
-</code></pre><h3 id="通过Yum来安装MySQL-会自动处理MySQL与其他组件的依赖关系"><a href="#通过Yum来安装MySQL-会自动处理MySQL与其他组件的依赖关系" class="headerlink" title="通过Yum来安装MySQL,会自动处理MySQL与其他组件的依赖关系"></a>通过Yum来安装MySQL,会自动处理MySQL与其他组件的依赖关系</h3><pre><code>[root@localhost ~]## yum install mysql-community-server
-</code></pre><h3 id="查看MySQL安装目录"><a href="#查看MySQL安装目录" class="headerlink" title="查看MySQL安装目录"></a>查看MySQL安装目录</h3><pre><code>[root@localhost ~]## whereis mysql
-</code></pre><h3 id="启动MySQL服务"><a href="#启动MySQL服务" class="headerlink" title="启动MySQL服务"></a>启动MySQL服务</h3><pre><code>[root@localhost ~]## systemctl start mysqld
-</code></pre><h3 id="查看MySQL服务状态"><a href="#查看MySQL服务状态" class="headerlink" title="查看MySQL服务状态"></a>查看MySQL服务状态</h3><pre><code>[root@localhost ~]## systemctl status mysqld
-</code></pre><h3 id="关闭MySQL服务"><a href="#关闭MySQL服务" class="headerlink" title="关闭MySQL服务"></a>关闭MySQL服务</h3><pre><code>[root@localhost ~]## systemctl stop mysqld
-</code></pre><h3 id="测试MySQL是否安装成功"><a href="#测试MySQL是否安装成功" class="headerlink" title="测试MySQL是否安装成功"></a>测试MySQL是否安装成功</h3><pre><code>[root@localhost ~]## mysql
-</code></pre><h3 id="查看MySql默认密码"><a href="#查看MySql默认密码" class="headerlink" title="查看MySql默认密码"></a>查看MySql默认密码</h3><pre><code>[root@localhost ~]## grep &#39;temporary password&#39; /var/log/mysqld.log
-</code></pre><h3 id="查看所有数据库"><a href="#查看所有数据库" class="headerlink" title="查看所有数据库"></a>查看所有数据库</h3><pre><code>mysql&gt;show databases;
-</code></pre><h3 id="退出登录数据库"><a href="#退出登录数据库" class="headerlink" title="退出登录数据库"></a>退出登录数据库</h3><pre><code>mysql&gt;exit;
-</code></pre><h3 id="查看所有数据库用户"><a href="#查看所有数据库用户" class="headerlink" title="查看所有数据库用户"></a>查看所有数据库用户</h3><pre><code>mysql&gt;SELECT DISTINCT CONCAT(&#39;User: &#39;&#39;&#39;,user,&#39;&#39;&#39;@&#39;&#39;&#39;,host,&#39;&#39;&#39;;&#39;) AS query FROM mysql.use
-</code></pre>
-        </div>
-        <!-- .entry-content -->
-        <div class="single-reward">
-          <div class="reward-open">赏
-            <div class="reward-main">
-              <ul class="reward-row">
-                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/custom/donate/AliPayQR.jpg"></li>
-                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/custom/donate/WeChanQR.jpg"></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
-        <footer class="post-footer">
-          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
-          <div class="post-tags">
-          </div>
-          <div class="post-share">
-            <div class="social-share sharehidden share-component"></div>
-            <i class="iconfont show-share icon-forward"></i>
-          </div>
-        </footer><!-- .entry-footer -->
-      </article>
-      <!-- #post-## -->
-      <div class="toc" style="background: none;"></div>
-      <section class="post-squares nextprev">
-        
-          
-            <div class="post-nepre half previous">
-          
-            <a href="/2019/12/01/Eclipse快捷键大全/" rel="prev">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.2/img/cover/1053107.webp" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.2/img/cover/1053107.webp">
-              </div>
-              <span class="label">
-              Previous Post</span>
-              <div class="info">
-                <h3>
-                Eclipse快捷键大全</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-        
-          
-            <div class="post-nepre half next">
-          
-            <a href="/2019/11/20/关于Linux操作系统的一些常用命令整理(CentOS)/" rel="next">
-              <div class="background">
-                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/loader/orange.progress-bar-stripe-loader.svg" data-src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/cover/1049330.jpg" style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.1/img/cover/1049330.jpg">
-              </div>
-              <span class="label">
-              Next Post</span>
-              <div class="info">
-                <h3>
-                关于Linux操作系统的一些常用命令整理(CentOS)</h3>
-                <hr>
-              </div>
-            </a>
-          </div>
-        
-      </section>
       
-<div id="vcomments"></div>
-<script>
-  window.onload = function(){
-      var valine = new Valine();
-      valine.init({
-        el: '#vcomments',
-        appId: "9fJ90tW2BRGB5QBKf0ggJxby-gzGzoHsz",
-        appKey: "M1TissBsjP5v1k61f6IXtQ7t",
-        path: window.location.pathname,
-        placeholder: "你是我一生只会遇见一次的惊喜 ..."
-      })
-  }
-</script>
-
-      <section class="author-profile">
-        <div class="info" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-          <a href="yanghainan.org" class="profile gravatar"><img src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2/img/cover/timg.jpg" itemprop="image" alt="hainan" height="70" width="70"></a>
-          <div class="meta">
-            <span class="title">Author</span>
-            <h3 itemprop="name">
-            <a href="yanghainan.org" itemprop="url" rel="author">hainan</a>
-            </h3>
-          </div>
+  <!-- 首页默认取最最新文章集 -->
+  
+    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+  <div class="post-entry">
+    <div class="feature">
+      <a href="/2019/12/01/Eclipse快捷键大全/">
+        <div class="overlay">
+          <i class="iconfont icon-text">
+          </i>
         </div>
-        <hr>
-        <p><i class="iconfont icon-write"></i>一个好奇的人</p>
-      </section>
-    </main><!-- #main -->
-  </div><!-- #primary -->
+        <img width="150" height="150" src="https://cdn.jsdelivr.net/gh/hainan13511/MyCDN@1.2.2/img/cover/1053107.webp" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" >
+      </a>
+    </div>
+    <h1 class="entry-title">
+    <a href="/2019/12/01/Eclipse快捷键大全/">
+    Eclipse快捷键大全</a>
+    </h1>
+    <div class="p-time">
+      <i class="iconfont icon-time">
+      </i>
+    2019-12-1</div>
+    <p>
+    公司开发用的是eclipse，所以做一个关于eclipse快捷键的一些整理</p>
+    <footer class="entry-footer">
+      <div class="post-more">
+        <a href="/2019/12/01/Eclipse快捷键大全/">
+          <i class="iconfont icon-caidan">
+          </i>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <hr>
+</article>
+  
+
+
+      <div class="clearer">
+      </div>
+    </main>
+    <!--  -->
+    
+    
+  </div>
 </div>
-
-
-
     </div>    
     <div class="ins-search">
     <div class="ins-search-mask"></div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yanghainan.org/"/>
-  <updated>2019-11-27T08:57:44.506Z</updated>
+  <updated>2019-12-01T07:10:29.744Z</updated>
   <id>http://yanghainan.org/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Eclipse快捷键大全</title>
+    <link href="http://yanghainan.org/2019/12/01/Eclipse%E5%BF%AB%E6%8D%B7%E9%94%AE%E5%A4%A7%E5%85%A8/"/>
+    <id>http://yanghainan.org/2019/12/01/Eclipse快捷键大全/</id>
+    <published>2019-12-01T06:22:00.000Z</published>
+    <updated>2019-12-01T07:10:29.744Z</updated>
+    
+    <summary type="html">
+    
+      公司开发用的是eclipse，所以做一个关于eclipse快捷键的一些整理
+    
+    </summary>
+    
+      <category term="资料" scheme="http://yanghainan.org/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+      <category term="eclipse" scheme="http://yanghainan.org/tags/eclipse/"/>
+    
+  </entry>
   
   <entry>
     <title>在阿里云服务器上安装MySQL（CentOS7）</title>
