@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yanghainan.org/"/>
-  <updated>2019-12-01T10:28:09.623Z</updated>
+  <updated>2019-12-04T12:30:29.316Z</updated>
   <id>http://yanghainan.org/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>免费且好用的CDN：jsDelivr+Github 搭建使用方法</title>
+    <link href="http://yanghainan.org/2019/12/03/%E5%85%8D%E8%B4%B9%E4%B8%94%E5%A5%BD%E7%94%A8%E7%9A%84CDN%EF%BC%9AjsDelivr-Github-%E6%90%AD%E5%BB%BA%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/"/>
+    <id>http://yanghainan.org/2019/12/03/免费且好用的CDN：jsDelivr-Github-搭建使用方法/</id>
+    <published>2019-12-03T08:54:10.000Z</published>
+    <updated>2019-12-04T12:30:29.316Z</updated>
+    
+    <summary type="html">
+    
+      放在Github的资源在国内加载速度比较慢，因此需要使用CDN加速来优化网站打开速度，jsDelivr + Github便是免费且好用的CDN，非常适合博客网站使用。
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yanghainan.org/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="CDN" scheme="http://yanghainan.org/tags/CDN/"/>
+    
+      <category term="GitHub" scheme="http://yanghainan.org/tags/GitHub/"/>
+    
+  </entry>
   
   <entry>
     <title>Eclipse快捷键大全</title>
