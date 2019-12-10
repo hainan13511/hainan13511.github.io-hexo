@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yanghainan.org/"/>
-  <updated>2019-12-04T12:30:29.316Z</updated>
+  <updated>2019-12-10T07:30:23.967Z</updated>
   <id>http://yanghainan.org/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MyBatis JdbcType对照表</title>
+    <link href="http://yanghainan.org/2019/12/10/MyBatis-JdbcType%E5%AF%B9%E7%85%A7%E8%A1%A8/"/>
+    <id>http://yanghainan.org/2019/12/10/MyBatis-JdbcType对照表/</id>
+    <published>2019-12-10T07:14:30.000Z</published>
+    <updated>2019-12-10T07:30:23.967Z</updated>
+    
+    <summary type="html">
+    
+      MyBatis JdbcType对照表
+    
+    </summary>
+    
+      <category term="资料" scheme="http://yanghainan.org/categories/%E8%B5%84%E6%96%99/"/>
+    
+    
+      <category term="MyBatis" scheme="http://yanghainan.org/tags/MyBatis/"/>
+    
+  </entry>
   
   <entry>
     <title>免费且好用的CDN：jsDelivr+Github 搭建使用方法</title>
