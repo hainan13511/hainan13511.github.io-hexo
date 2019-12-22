@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yanghainan.org/"/>
-  <updated>2019-12-10T07:30:23.967Z</updated>
+  <updated>2019-12-22T15:18:50.028Z</updated>
   <id>http://yanghainan.org/</id>
   
   <author>
@@ -15,6 +15,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>冬至随想</title>
+    <link href="http://yanghainan.org/2019/12/22/%E5%86%AC%E8%87%B3%E9%9A%8F%E6%83%B3/"/>
+    <id>http://yanghainan.org/2019/12/22/冬至随想/</id>
+    <published>2019-12-22T15:18:49.000Z</published>
+    <updated>2019-12-22T15:18:50.028Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yanghainan.org/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>MyBatis JdbcType对照表</title>
